@@ -2,8 +2,9 @@ package eregister
 
 class Registerentry {
 
-   String registrationSheet
-   String student
+   Registrationsheet registrationsheet
+   Student student
+   
 
     static constraints = {
     }

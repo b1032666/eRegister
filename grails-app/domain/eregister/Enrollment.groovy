@@ -2,9 +2,9 @@ package eregister
 
 class Enrollment {
 
-   String student
-   String class
    Date enrolledDate
+   RegClass regClass
+   Student student
 
     static constraints = {
     }

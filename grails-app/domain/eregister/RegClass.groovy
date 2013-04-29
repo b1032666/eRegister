@@ -2,8 +2,13 @@ package eregister
 
 class RegClass {
 
-   String classID
-   String instructorId
+   String classId
+   Instructor classInstructor
+   Course course
+   Set registerClass
+
+   static hasMany=[registerClass:Enrollment, registerClass:Registrationsheet]
+   static mappedBy=[registerClass:'regClass', registerClass:'regClass']
 
     static constraints = {
     }
