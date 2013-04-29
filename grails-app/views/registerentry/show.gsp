@@ -23,6 +23,24 @@
 			</g:if>
 			<ol class="property-list registerentry">
 			
+				<g:if test="${registerentryInstance?.registrationsheet}">
+				<li class="fieldcontain">
+					<span id="registrationsheet-label" class="property-label"><g:message code="registerentry.registrationsheet.label" default="Registrationsheet" /></span>
+					
+						<span class="property-value" aria-labelledby="registrationsheet-label"><g:link controller="registrationsheet" action="show" id="${registerentryInstance?.registrationsheet?.id}">${registerentryInstance?.registrationsheet?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${registerentryInstance?.student}">
+				<li class="fieldcontain">
+					<span id="student-label" class="property-label"><g:message code="registerentry.student.label" default="Student" /></span>
+					
+						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${registerentryInstance?.student?.id}">${registerentryInstance?.student?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

@@ -23,6 +23,35 @@
 			</g:if>
 			<ol class="property-list registrationsheet">
 			
+				<g:if test="${registrationsheetInstance?.dateSigned}">
+				<li class="fieldcontain">
+					<span id="dateSigned-label" class="property-label"><g:message code="registrationsheet.dateSigned.label" default="Date Signed" /></span>
+					
+						<span class="property-value" aria-labelledby="dateSigned-label"><g:formatDate date="${registrationsheetInstance?.dateSigned}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${registrationsheetInstance?.regClass}">
+				<li class="fieldcontain">
+					<span id="regClass-label" class="property-label"><g:message code="registrationsheet.regClass.label" default="Reg Class" /></span>
+					
+						<span class="property-value" aria-labelledby="regClass-label"><g:link controller="regClass" action="show" id="${registrationsheetInstance?.regClass?.id}">${registrationsheetInstance?.regClass?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${registrationsheetInstance?.registersheet}">
+				<li class="fieldcontain">
+					<span id="registersheet-label" class="property-label"><g:message code="registrationsheet.registersheet.label" default="Registersheet" /></span>
+					
+						<g:each in="${registrationsheetInstance.registersheet}" var="r">
+						<span class="property-value" aria-labelledby="registersheet-label"><g:link controller="registerentry" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

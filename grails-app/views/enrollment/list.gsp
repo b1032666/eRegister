@@ -24,11 +24,23 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="enrolledDate" title="${message(code: 'enrollment.enrolledDate.label', default: 'Enrolled Date')}" />
+					
+						<th><g:message code="enrollment.regClass.label" default="Reg Class" /></th>
+					
+						<th><g:message code="enrollment.student.label" default="Student" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${enrollmentInstanceList}" status="i" var="enrollmentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${enrollmentInstance.id}">${fieldValue(bean: enrollmentInstance, field: "enrolledDate")}</g:link></td>
+					
+						<td>${fieldValue(bean: enrollmentInstance, field: "regClass")}</td>
+					
+						<td>${fieldValue(bean: enrollmentInstance, field: "student")}</td>
 					
 					</tr>
 				</g:each>

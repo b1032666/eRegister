@@ -24,11 +24,19 @@
 				<thead>
 					<tr>
 					
+						<th><g:message code="registerentry.registrationsheet.label" default="Registrationsheet" /></th>
+					
+						<th><g:message code="registerentry.student.label" default="Student" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${registerentryInstanceList}" status="i" var="registerentryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${registerentryInstance.id}">${fieldValue(bean: registerentryInstance, field: "registrationsheet")}</g:link></td>
+					
+						<td>${fieldValue(bean: registerentryInstance, field: "student")}</td>
 					
 					</tr>
 				</g:each>

@@ -24,11 +24,19 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="dateSigned" title="${message(code: 'registrationsheet.dateSigned.label', default: 'Date Signed')}" />
+					
+						<th><g:message code="registrationsheet.regClass.label" default="Reg Class" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${registrationsheetInstanceList}" status="i" var="registrationsheetInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${registrationsheetInstance.id}">${fieldValue(bean: registrationsheetInstance, field: "dateSigned")}</g:link></td>
+					
+						<td>${fieldValue(bean: registrationsheetInstance, field: "regClass")}</td>
 					
 					</tr>
 				</g:each>

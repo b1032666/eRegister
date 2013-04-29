@@ -23,6 +23,44 @@
 			</g:if>
 			<ol class="property-list regClass">
 			
+				<g:if test="${regClassInstance?.classId}">
+				<li class="fieldcontain">
+					<span id="classId-label" class="property-label"><g:message code="regClass.classId.label" default="Class Id" /></span>
+					
+						<span class="property-value" aria-labelledby="classId-label"><g:fieldValue bean="${regClassInstance}" field="classId"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${regClassInstance?.classInstructor}">
+				<li class="fieldcontain">
+					<span id="classInstructor-label" class="property-label"><g:message code="regClass.classInstructor.label" default="Class Instructor" /></span>
+					
+						<span class="property-value" aria-labelledby="classInstructor-label"><g:link controller="instructor" action="show" id="${regClassInstance?.classInstructor?.id}">${regClassInstance?.classInstructor?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${regClassInstance?.course}">
+				<li class="fieldcontain">
+					<span id="course-label" class="property-label"><g:message code="regClass.course.label" default="Course" /></span>
+					
+						<span class="property-value" aria-labelledby="course-label"><g:link controller="course" action="show" id="${regClassInstance?.course?.id}">${regClassInstance?.course?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${regClassInstance?.registerClass}">
+				<li class="fieldcontain">
+					<span id="registerClass-label" class="property-label"><g:message code="regClass.registerClass.label" default="Register Class" /></span>
+					
+						<g:each in="${regClassInstance.registerClass}" var="r">
+						<span class="property-value" aria-labelledby="registerClass-label"><g:link controller="registrationsheet" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

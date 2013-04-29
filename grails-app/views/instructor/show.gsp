@@ -23,6 +23,35 @@
 			</g:if>
 			<ol class="property-list instructor">
 			
+				<g:if test="${instructorInstance?.classesTaught}">
+				<li class="fieldcontain">
+					<span id="classesTaught-label" class="property-label"><g:message code="instructor.classesTaught.label" default="Classes Taught" /></span>
+					
+						<g:each in="${instructorInstance.classesTaught}" var="c">
+						<span class="property-value" aria-labelledby="classesTaught-label"><g:link controller="regClass" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${instructorInstance?.instructorId}">
+				<li class="fieldcontain">
+					<span id="instructorId-label" class="property-label"><g:message code="instructor.instructorId.label" default="Instructor Id" /></span>
+					
+						<span class="property-value" aria-labelledby="instructorId-label"><g:fieldValue bean="${instructorInstance}" field="instructorId"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${instructorInstance?.instructorName}">
+				<li class="fieldcontain">
+					<span id="instructorName-label" class="property-label"><g:message code="instructor.instructorName.label" default="Instructor Name" /></span>
+					
+						<span class="property-value" aria-labelledby="instructorName-label"><g:fieldValue bean="${instructorInstance}" field="instructorName"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
