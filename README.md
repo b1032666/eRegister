@@ -13,3 +13,17 @@ Although the project is not completed I believe I have a good solid basis for th
 on in later builds.
 
 
+
+If you wish to have a look at this project and give it a run then by all means do so.
+In order for you do do this go into your terminal and use the command
+
+    git clone git@github.com:b1032666/eRegister.git
+    
+This should copy the entire repositry of the project.
+
+From here I think you should be able to have a look at all of the files I have done and be able to run
+the web app by doing
+
+    grails run-app
+
+
